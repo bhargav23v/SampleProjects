@@ -1,0 +1,16 @@
+<div>
+  <div class="card" style="width: 13rem; height: 100%">
+  <img src="{{video.thumbnailurl}}" class="card-img-top" >
+  <div class="card-body">
+    <h5 class="card-title" style="font-size: 15px;">{{video.title | Short}}</h5>
+    <span style="font-weight: bold">Description:</span>
+    <p class="card-text">
+      {{video.description | Shorten}}</p>
+  </div>
+    <div class="card-footer" style="width: 100%">
+      <div class="text-center">
+    <a href="{{video.videoUrl}}" class="btn btn-primary">Watch</a>
+  </div></div>
+</div>
+<br>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+<div class="jumbotron bgm">
+  <h1>Videos for Everyone</h1>
+  <p>Millions of videos for your entertainment</p>
+</div>
+</div>
+
+<div class="container">
+    <div class="form-inline idt">
+        <label>Start Searching here:</label>
+        <input #searchInput type="text" class="form-control" placeholder="Search">
+    </div>
+    <br><br>
+    <hr>
+</div>
+
+<div class="container">
+<div class="jumbotron">
+<div class="card-deck bgt">
+  <youtube-video *ngFor="let video of videos" [video]="video"></youtube-video>
+</div>
+</div>
+</div>

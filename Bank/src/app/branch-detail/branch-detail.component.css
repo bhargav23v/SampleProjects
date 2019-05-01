@@ -1,0 +1,7 @@
+.branch-details .label {
+    font-weight: bold;
+    display: inline-block;
+    width: 150px;
+    margin: 5px;
+    height:50px;
+}

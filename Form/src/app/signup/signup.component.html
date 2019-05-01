@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-light">
+  <span class="navbar-brand h1">TruckTracker</span>
+</nav>
+
+<div class="col-md-6">
+  <div id="logbox">
+    <form [formGroup]="signupFormGroup" (ngSubmit)="onCreateAccount(signupFormGroup)" id="signup" method="post" action="/signup">
+      <h1>Register</h1>
+      <hr>
+      <input [formControl]="signupFormGroup.controls['firstName']" name="firstName" type="text" placeholder="First Name"  autofocus="autofocus" required="required" class="input pass"/>
+      <div *ngIf="!signupFormGroup.controls['firstName'].valid && signupFormGroup.controls['firstName'].dirty  && signupFormGroup.controls['firstName'].hasError('required')"  class="alert alert-danger" role="alert">
+        First Name is Required
+    </div>
+      <input [formControl]="signupFormGroup.controls['lastName']"  name="lastName" type="text" placeholder="Last Name"  autofocus="autofocus" required="required" class="input pass"/>
+      <div *ngIf="!signupFormGroup.controls['lastName'].valid && signupFormGroup.controls['lastName'].dirty  && signupFormGroup.controls['lastName'].hasError('required')"  class="alert alert-danger" role="alert">
+        Last Name is Required
+    </div>
+      <input [formControl]="signupFormGroup.controls['emailAddress']"  name="emailAddress" type="text" placeholder="Email Address"  autofocus="autofocus" required="required" class="input pass"/>
+      <div *ngIf="!signupFormGroup.controls['emailAddress'].valid && signupFormGroup.controls['emailAddress'].dirty  && signupFormGroup.controls['emailAddress'].hasError('required')"  class="alert alert-danger" role="alert">
+        Email is Required
+      </div>
+
+      <div *ngIf="!signupFormGroup.controls['emailAddress'].valid && signupFormGroup.controls['emailAddress'].dirty && signupFormGroup.controls['emailAddress'].hasError('email')"  class="alert alert-danger" role="alert">
+          Email Format should have @ in the email
+       </div>
+      <input [formControl]="signupFormGroup.controls['password']"  name="password" type="password" placeholder="Choose a password" required="required" class="input pass"/>
+      <div *ngIf="!signupFormGroup.controls['password'].valid && signupFormGroup.controls['password'].dirty  && signupFormGroup.controls['password'].hasError('required')"  class="alert alert-danger" role="alert">
+        Password is Required
+    </div>
+      <input [formControl]="signupFormGroup.controls['phoneNumber']"  name="phoneNumber" type="text" placeholder="Phone Number"  autofocus="autofocus" required="required" class="input pass"/>
+      <div *ngIf="!signupFormGroup.controls['phoneNumber'].valid && signupFormGroup.controls['phoneNumber'].dirty  && signupFormGroup.controls['phoneNumber'].hasError('required')"  class="alert alert-danger" role="alert">
+        Phone Number is Required
+    </div>
+      <input type="submit" value="Sign me up!" class="inputButton"/>
+      <div class="text-center">
+          Already have an account? <a href="#" id="login_id">Login</a>
+      </div>
+    </form>
+  </div>

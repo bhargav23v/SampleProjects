@@ -1,0 +1,27 @@
+.branches ul {
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px solid #ccc;
+}
+.branches li {
+    list-style-type: none;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+
+.branches li a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.branches input {
+    height: 30px;
+    border-radius: 5px;
+    width: 60%;
+    margin: 5px;
+    border: 1px solid #ccc;
+}
+
+h3 {
+    float: right;
+}

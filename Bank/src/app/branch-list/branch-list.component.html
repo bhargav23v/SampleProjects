@@ -1,0 +1,20 @@
+<div class="idt">
+<div class="container">
+<div class="branches">
+  <br><br>
+  <div class="jumbotron">
+    <h1>Hub for all the Bank Details</h1>
+    <p>--- Start finding the Bank's Info in your City</p>
+  </div>
+    <h3>Enter Your City: 
+    <input type="search" placeholder="Search" [(ngModel)]="searchText"></h3><br><br><br>
+  <ul>
+    <li *ngFor="let branch of branchList | FilterPipe : searchText">
+      <a routerLink="/detail/{{branch.Identification}}">
+        <span>{{branch.Name}}</span>
+      </a>
+    </li>
+  </ul> 
+</div>
+</div>
+</div>

@@ -1,0 +1,14 @@
+body,html,section{
+    margin:0;
+    padding:0;
+  }
+  
+  .masthead{
+              height:100%;
+              min-height:100vh;
+              background-image:url("src/assets/truck.jpg");
+              background-size:cover;
+              background-position:center;
+              width: 100%;
+
+          }

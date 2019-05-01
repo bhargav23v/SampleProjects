@@ -1,0 +1,25 @@
+<br><br><br><br>
+<div class="container"><div class="jumbotron">
+<div class="branch-details" *ngIf="currentBranch && currentBranch.PostalAddress">
+  <div>
+    <span class="label">Branch Name :</span> {{currentBranch.Name}}
+  </div>
+  <div>
+      <span class="label">Address: </span>
+      <span *ngFor="let addressLine of currentBranch.PostalAddress.AddressLine">
+        {{addressLine}}
+      </span>,
+      {{currentBranch.PostalAddress.TownName}}, {{currentBranch.PostalAddress.Country}}.
+      <span>Pin: </span>
+      <span>{{currentBranch.PostalAddress.PostCode}}</span>
+  </div>
+  <div>
+      <span class="label">
+        Contact Details : 
+      </span>
+      <span>
+        {{currentBranch.ContactInfo[0].ContactContent}}
+      </span>
+  </div>
+</div>
+</div></div>

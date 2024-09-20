@@ -8,7 +8,7 @@ import * as _ from 'lodash';
 @Injectable()
 export class YoutubeService {
   baseUrl = 'https://www.googleapis.com/youtube/v3/search';
-  key = 'AIzaSyBazul_vk-tg-akYPPomWWgBzohJ_lG--I';
+  key = 'AIzaSyAqLMFvisWw_4Boq1pNfVDenlhuXH1qaKQ';
   constructor(private http: HttpClient) {
 
   }

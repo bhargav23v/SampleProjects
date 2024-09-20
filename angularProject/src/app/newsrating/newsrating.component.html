@@ -1,0 +1,43 @@
+
+<div class="col-sm-9 my-5">
+        <div class="card card-body bg-light">
+            <div class="row">
+               <div class="col-sm-6 ">
+                <div class="h-100 justify-content-center align-items-center p-5" style="background-color: #eee;">
+                     <h1 class="display-1">{{newsRating.votes}}</h1> 
+                    <label>Points</label>
+                      
+                </div>
+              </div>
+              
+               <div  class="col-sm-6">
+                <h1>{{newsRating.title}}</h1>
+                <span class="lead">{{newsRating.link}}</span>
+               
+                <div class="bottom-align-text">
+                  <a href="#" (click)="upVote()" class="text-primary">+ Vote</a>
+                  <a href="#" (click)="downVote()" class="text-primary ml-4">- Vote</a>
+                </div>
+                
+                <button type="button" class="btn btn-dark mt-5" (click)="onToggle()" >Brief Info</button>
+              </div>
+            </div>
+    
+        </div>
+        
+    </div>
+    <div  *ngIf = "toggle" class="card float-right col-sm-3 my-5">
+        <div class="card-header">
+          Brief information
+        </div>
+        <div class="card-body" >
+          <h5 class="card-title"> {{newsRating.title}}</h5>
+          <p class="card-text">Total votes : {{newsRating.votes}} </p>
+          <p class="card-text">International Media </p>
+          <button type="button" class="btn btn-dark mt-5" [routerLink]="['/user', newsRating.title]" >Get details</button>
+          
+        </div>
+      </div>
+    
+    
+    

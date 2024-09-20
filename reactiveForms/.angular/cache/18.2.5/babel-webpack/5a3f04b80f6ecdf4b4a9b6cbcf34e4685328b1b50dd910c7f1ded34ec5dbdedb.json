@@ -1,0 +1,1 @@
+{"ast":null,"code":"export function fourthPasswordValidator(control) {\n  const valid = control.value.match(/[!@#$%^&*(),.?\":{}|<>]/g);\n  if (!valid) {\n    return {\n      fourthPasswordError: true\n    };\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

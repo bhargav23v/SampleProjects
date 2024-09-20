@@ -22,7 +22,7 @@
       </div>
 
       <div *ngIf="!signupFormGroup.controls['emailAddress'].valid && signupFormGroup.controls['emailAddress'].dirty && signupFormGroup.controls['emailAddress'].hasError('email')"  class="alert alert-danger" role="alert">
-          Email Format should have @ in the email
+          Email Format should have &#64; in the email
        </div>
       <input [formControl]="signupFormGroup.controls['password']"  name="password" type="password" placeholder="Choose a password" required="required" class="input pass"/>
       <div *ngIf="!signupFormGroup.controls['password'].valid && signupFormGroup.controls['password'].dirty  && signupFormGroup.controls['password'].hasError('required')"  class="alert alert-danger" role="alert">

@@ -1,0 +1,9 @@
+.cardPadding {
+    padding: 25px;
+  }
+  .card {
+    margin: 0 auto;
+  }
+  .form-control {
+    display: inline;
+  }

@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h4 class="display-4">Add News Media</h4>
+  <p> User Email ID : {{userEmail}}</p>
+  <form>
+    <div class="form-group">
+      <label for="title">News Media name</label>
+      <input #titleElement  type="text" class="form-control" id="title">
+
+    </div>
+    <div class="form-group">
+      <label for="link"> Official Link</label>
+      <input #linkElement type="text" class="form-control" id="link">
+    </div>
+
+    <button (click)="addNewsRating(titleElement,linkElement)" type="submit" class="btn btn-dark">Add</button>
+  </form>
+
+  
+
+  <div>
+    <news-rating *ngFor="let rating of newsRatings;  trackBy: identify" [newsRating]="rating" ></news-rating>
+  </div>
+</div>

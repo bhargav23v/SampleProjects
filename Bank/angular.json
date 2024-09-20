@@ -51,18 +51,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Aavri-frontend:build"
+            "buildTarget": "Aavri-frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Aavri-frontend:build:production"
+              "buildTarget": "Aavri-frontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Aavri-frontend:build"
+            "buildTarget": "Aavri-frontend:build"
           }
         },
         "test": {

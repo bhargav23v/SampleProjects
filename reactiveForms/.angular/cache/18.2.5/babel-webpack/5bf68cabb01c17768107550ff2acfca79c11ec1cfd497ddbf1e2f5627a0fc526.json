@@ -1,0 +1,1 @@
+{"ast":null,"code":"export function thirdPasswordValidator(control) {\n  const valid = control.value.match(/[A-Z]/g); // /[!@#$%^&*(),.?\":{}|<>]/g\n  if (!valid) {\n    return {\n      thirdPasswordError: true\n    };\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class NewsRatingModel {\n  constructor(passedTitle, link, votes) {\n    this.title = passedTitle;\n    this.link = link;\n    this.votes = votes || 0;\n  }\n  voteUp() {\n    this.votes++;\n  }\n  voteDown() {\n    this.votes--;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

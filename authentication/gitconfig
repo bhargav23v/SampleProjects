@@ -1,0 +1,13 @@
+[merge]
+	tool = meld
+[mergetool "meld"]
+	path = c:\\Program Files (x86)\\Meld\\Meld.exe
+[diff]
+	tool = meld
+[difftool "meld"]
+	path = c:\\Program Files (x86)\\Meld\\Meld.exe
+[difftool]
+	prompt = false
+
+
+// c/Users/username/.gitconfig

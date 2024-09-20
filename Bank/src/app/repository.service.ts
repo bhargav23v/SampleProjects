@@ -18,9 +18,9 @@ export class RepositoryService {
   }
 
   getBranch(id: Number): Observable<any> {
-    let list = [];
+    let list: any[] = [];
     this.getBranches().subscribe(response => {
-      list = response.data[0].Brand[0].Branch.filter(item => {
+      list = response.data[0].Brand[0].Branch.filter((item: any) => {
         return item.Identification == id;
       });
     });

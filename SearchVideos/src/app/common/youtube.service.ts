@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { VideoModel } from '../video/video.model';
 import * as _ from 'lodash';
 
@@ -17,7 +17,11 @@ export class YoutubeService {
        const url = `${this.baseUrl}?q=${query}&key=${this.key}&part=snippet&type=video&maxResults=20`;
 
        return this.http.get(url)
-              .pipe(map(this.transformFunction));
+              .pipe(map(this.transformFunction),
+              catchError((error) => {
+                console.error('Error fetching data from YouTube API', error);
+                return of([]); // Return an empty array or handle it as needed
+              }));
 
   }
 

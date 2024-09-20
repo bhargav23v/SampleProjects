@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "TruckTrackerUI"
+  "defaultProject": "TruckTrackerUI",
+  "cli": {
+    "analytics": "e0e88611-4ffc-4ac5-bf05-197b890e3817"
+  }
 }

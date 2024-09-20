@@ -1,0 +1,251 @@
+<div class="jumbotron">
+  <h1 class="display-5">Signup Form</h1>
+  <div class="card " style="width: 28rem;">
+    <form
+      class="cardPadding"
+      [formGroup]="registerFormGroup"
+      (ngSubmit)="onSubmit(registerFormGroup)"
+    >
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="First Name"
+          [formControl]="registerFormGroup.controls['firstName']"
+          placement="right"
+        />
+
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['firstName'].dirty &&
+            registerFormGroup.controls['firstName'].hasError('required')
+          "
+        >
+          Required
+        </div>
+        <i
+          *ngIf="registerFormGroup.controls['firstName'].valid"
+          class="fa fa-check valid"
+        ></i>
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Surname"
+          [formControl]="registerFormGroup.controls['surName']"
+          placement="right"
+        />
+        <i
+          *ngIf="registerFormGroup.controls['surName'].valid"
+          class="fa fa-check valid"
+        ></i>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['surName'].dirty &&
+            registerFormGroup.controls['surName'].hasError('required')
+          "
+        >
+          SurName is Required
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Enter a login xyz@abc.com"
+          [formControl]="registerFormGroup.controls['enterLogin']"
+        />
+        <i
+          *ngIf="registerFormGroup.controls['enterLogin'].valid"
+          class="fa fa-check valid"
+        ></i>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['enterLogin'].dirty &&
+            registerFormGroup.controls['enterLogin'].hasError('required')
+          "
+        >
+          Email is Required
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['enterLogin'].dirty &&
+            registerFormGroup.controls['enterLogin'].hasError('email')
+          "
+        >
+          Email format should include &#64;
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          class="form-control"
+          placeholder=" Enter a Password"
+          [formControl]="registerFormGroup.controls['enterPassword']"
+        />
+        <i
+          *ngIf="registerFormGroup.controls['enterPassword'].valid"
+          class="fa fa-check valid"
+        ></i>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['enterPassword'].dirty &&
+            registerFormGroup.controls['enterPassword'].hasError('required')
+          "
+        >
+          Password is Required
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['enterPassword'].dirty &&
+            !registerFormGroup.controls['enterPassword'].hasError('required') &&
+            registerFormGroup.controls['enterPassword'].hasError(
+              'firstPasswordError'
+            )
+          "
+        >
+          Password should be atleast 6 characters
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['enterPassword'].dirty &&
+            !registerFormGroup.controls['enterPassword'].hasError('required') &&
+            !registerFormGroup.controls['enterPassword'].hasError(
+              'firstPasswordError'
+            ) &&
+            registerFormGroup.controls['enterPassword'].hasError(
+              'secondPasswordError'
+            )
+          "
+        >
+          Password should include digits
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['enterPassword'].dirty &&
+            !registerFormGroup.controls['enterPassword'].hasError('required') &&
+            !registerFormGroup.controls['enterPassword'].hasError(
+              'firstPasswordError'
+            ) &&
+            !registerFormGroup.controls['enterPassword'].hasError(
+              'secondPasswordError'
+            ) &&
+            registerFormGroup.controls['enterPassword'].hasError(
+              'thirdPasswordError'
+            )
+          "
+        >
+          Password should include Uppercase letters
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['enterPassword'].dirty &&
+            !registerFormGroup.controls['enterPassword'].hasError('required') &&
+            !registerFormGroup.controls['enterPassword'].hasError(
+              'firstPasswordError'
+            ) &&
+            !registerFormGroup.controls['enterPassword'].hasError(
+              'secondPasswordError'
+            ) &&
+            !registerFormGroup.controls['enterPassword'].hasError(
+              'thirdPasswordError'
+            ) &&
+            registerFormGroup.controls['enterPassword'].hasError(
+              'fourthPasswordError'
+            )
+          "
+        >
+          Password should include atleast 1 special character
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Confirm Password"
+          [formControl]="registerFormGroup.controls['confirmPassword']"
+        />
+        <i
+          *ngIf="registerFormGroup.controls['confirmPassword'].valid"
+          class="fa fa-check valid"
+        ></i>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['confirmPassword'].dirty &&
+            registerFormGroup.controls['confirmPassword'].hasError('required')
+          "
+        >
+          Password Confirmation is Required
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['confirmPassword'].dirty &&
+            !registerFormGroup.controls['confirmPassword'].hasError(
+              'required'
+            ) &&
+            registerFormGroup.controls['confirmPassword'].hasError('mustMatch')
+          "
+        >
+          Password should match
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Mobile phone number"
+          [formControl]="registerFormGroup.controls['phoneNumber']"
+        />
+        <i
+          *ngIf="registerFormGroup.controls['phoneNumber'].valid"
+          class="fa fa-check valid"
+        ></i>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['phoneNumber'].dirty &&
+            registerFormGroup.controls['phoneNumber'].hasError('required')
+          "
+        >
+          Phone Number is Required
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="
+            registerFormGroup.controls['phoneNumber'].dirty &&
+            !registerFormGroup.controls['phoneNumber'].hasError('required') &&
+            registerFormGroup.controls['phoneNumber'].hasError('numberError')
+          "
+        >
+          Phone Number is Required which is only numbers
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="!registerFormGroup.valid"
+        class="btn btn-primary"
+      >
+        Register
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h1 class="display-5">Clear the list</h1>
+  <button class=" btn btn-primary" (click)="onClear()">Clear Storage</button>
+</div>

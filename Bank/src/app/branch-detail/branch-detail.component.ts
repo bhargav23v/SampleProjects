@@ -51,10 +51,11 @@ Type: "Physical"
   }
 
   getBranchDetail() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const idParam = this.route.snapshot.paramMap.get('id');
+const id = idParam ? +idParam : null; // Handle null case
     let list = [];
     this.repository.getBranches().subscribe(reponse => {
-      list = reponse.data[0].Brand[0].Branch.filter(item => {
+      list = reponse.data[0].Brand[0].Branch.filter((item: any) => {
         return item.Identification == id;
       });
       this.currentBranch = list[0];

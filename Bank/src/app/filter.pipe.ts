@@ -4,9 +4,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'FilterPipe'
 })
 export class FilterPipe implements PipeTransform {
-  transform(value, args?) {    
+  transform(value: any[], args?: any): any[] {    
     let field1 = args;
-    return value.filter(fieldItem => {
+    return value.filter((fieldItem: any) => {
       if (!field1) {
           return true;
       }
